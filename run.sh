@@ -1,5 +1,8 @@
 #!/bin/bash
 
+ISCO="trad_isco.fsm"
+ORRA="trad_orra.fsm"
+
 # Remove generated files
 rm -f *.pdf *.fsm
 
@@ -16,11 +19,21 @@ fsmcompile -i letras.syms -o letras.syms -t trad_isco.txt > trad_isco.fsm
 fsmcompile -i letras.syms -o letras.syms -t trad_orra.txt > trad_orra.fsm
 
 # Compose word transducers with suffix tranducers
-fsmcompose namorisco.fsm trad_isco.fsm > namoro.fsm
-fsmdraw -i letras.syms -o letras.syms namoro.fsm | dot -Tpdf > namoro.pdf
 
-fsmcompose mourisco.fsm trad_isco.fsm > mouro.fsm
-fsmdraw -i letras.syms -o letras.syms mouro.fsm | dot -Tpdf > mouro.pdf
-
-fsmcompose chuvisco.fsm trad_isco.fsm > chuva.fsm
-fsmdraw -i letras.syms -o letras.syms chuva.fsm | dot -Tpdf > chuva.pdf
+for fsm in *.fsm
+do
+    name="${fsm%.*}"
+    fsmExtension="_out.fsm"
+    pdfExtension="_out.pdf"
+    if [ $fsm != $ISCO ] && [ $fsm != $ORRA ]; then
+        if [[ $name == *orra ]]
+        then
+            fsmcompose $fsm $ORRA > "$name$fsmExtension"
+            fsmdraw -i letras.syms -o letras.syms "$name$fsmExtension" | dot -Tpdf > "$name$pdfExtension"  
+        elif [[ $name == *isco ]]
+        then
+            fsmcompose $fsm $ISCO > "$name$fsmExtension"
+            fsmdraw -i letras.syms -o letras.syms "$name$fsmExtension" | dot -Tpdf > "$name$pdfExtension" 
+        fi
+    fi
+done
