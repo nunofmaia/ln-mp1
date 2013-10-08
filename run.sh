@@ -12,6 +12,9 @@ do
   fsmdraw -i letras.syms -o letras.syms $fsmFile | dot -Tpdf > $pdfFile
 done
 
+fsmcompile -i letras.syms -o letras.syms -t trad_isco.txt > trad_isco.fsm
+fsmcompile -i letras.syms -o letras.syms -t trad_orra.txt > trad_orra.fsm
+
 # Compose word transducers with suffix tranducers
 fsmcompose namorisco.fsm trad_isco.fsm > namoro.fsm
 fsmdraw -i letras.syms -o letras.syms namoro.fsm | dot -Tpdf > namoro.pdf
