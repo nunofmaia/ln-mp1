@@ -9,5 +9,4 @@ Relativamente a este sufixo, como ele próprio constitui uma palavra, achámos c
 ---------------
 | Sufixo -orra |
 ---------------
-No caso deste sufixo, não encontrámos nenhum exemplo em que a palavra des-sufixada não fosse também do género feminino. No entanto, as terminações poderiam ter "a" ou "e". Portanto, decidimos fazer o mesmo que no sufixo -isco.
 Para além do autómato base descrito anteriormente, encontrámos duas exceções que nos pareceram relevantes. A primeira são palavras cuja última sílaba termina em "ce" e que, quando sufixadas, implicam alteração do "c" para "ç" (ex.: alface -> alfaçorra). A outra exceção é quando é necessário acrescentar um "z" antes do sufixo (ex.: mão -> mãozorra).
