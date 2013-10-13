@@ -3,10 +3,11 @@
 CLEAR="clean"
 ALL="all"
 
-if [ $1 = $CLEAR ]
+
+if [ "$1" == "$CLEAR" ]
 then
   rm -f *.pdf *.fsm
-elif [ $1 == $ALL ]
+elif [ "$1" == "$ALL" ] || [ -z "$1" ]
 then
   ISCO="trad_isco.fsm"
   ORRA="trad_orra.fsm"
