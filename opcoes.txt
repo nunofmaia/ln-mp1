@@ -1,0 +1,13 @@
+A opção fundamental que tivemos de tomar desde o início, foi permitir ler o próprio sufixo mas ainda como parte da palavra dessufixada e ter o comportamento esperado. Para tal, a partir do estado onde se podem consumir todas as letras exceto o início do sufixo surgem dois caminhos. Um deles leva à terminação da palavra com o sufixo, onde o mesmo é retirado. O outro permite ler o sufixo ou parte dele a qualquer momento como parte da palavra. Deste modo criámos uma espécie de estrutura base tanto para o autómato do sufixo isco como do orra.
+
+---------------
+| Sufixo isco |
+---------------
+Apesar das palavras com este sufixo serem do género masculino, nem sempre a palavra original o é também (ex.: chuvisco -> chuva). Para, em certos casos, evitarmos dar uma resposta errada, decidimos dar várias repostas com diferentes terminações ("a", "o" e "e") em que uma é a correta.
+Relativamente a este sufixo, como ele próprio constitui uma palavra, achámos conveniente poder reconhecer esta palavra como dessufixada. Para tal, acrescentámos um estado inicial que garante que recebemos pelo menos uma letra antes do sufixo aparecer.
+
+---------------
+| Sufixo orra |
+---------------
+No caso deste sufixo não encontrámos nenhum exemplo em que a palavra dessufixada não fosse também do género feminino. No entanto, as terminações poderiam ter "a" ou "e". Portanto, decidimos fazer o mesmo que no sufixo isco.
+Para além do autómato base descrito anteriormente, encontrámos duas excepções que nos pareceram relevantes. A primeira são palavras cuja última sílaba termina em "ce" e que quando sufixadas implicam alteração do "c" para "ç". A outra exceção é quando é necessário acrescentar um "z" antes do sufixo (ex.: mão -> mãozorra).

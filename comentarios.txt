@@ -1,0 +1,13 @@
+---------------
+| Sufixo isco |
+---------------
+Palavras terminadas em "isco" em que este não é um sufixo, o nosso autómato comporta-se como se fosse (ex.: petisco, marisco), exceto a palavra isco.
+São aceites plurais (ex.: mouriscos -> mouro).
+
+---------------
+| Sufixo orra |
+---------------
+Palavras terminadas em "orra" em que este não é um sufixo, o nosso autómato comporta-se como se fosse (ex.: borra, andorra).
+São aceites plurais (ex.: mãozorras -> mão).
+Considerámos que todas as palavras cuja última sílaba é "za", "que" e "gue" são sufixadas com zorra. Deste modo o automáto tem um comportamente indesejado caso encontre limpezorra em vez de limpezazorra, clacorra em vez de claquezorra e dengorra em vez de denguezorra.
+
