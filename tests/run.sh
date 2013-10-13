@@ -11,7 +11,6 @@ elif [ "$1" == "$ALL" ] || [ -z "$1" ]
 then
   ISCO="trad_isco.fsm"
   ORRA="trad_orra.fsm"
-  ZORRA="trad_zorra.fsm"
   
   # Remove generated files
   rm -f *.pdf *.fsm
@@ -27,7 +26,6 @@ then
   
   fsmcompile -i letras.syms -o letras.syms -t trad_isco.txt > trad_isco.fsm
   fsmcompile -i letras.syms -o letras.syms -t trad_orra.txt > trad_orra.fsm
-  fsmcompile -i letras.syms -o letras.syms -t trad_zorra.txt > trad_zorra.fsm
   
   # Compose word transducers with suffix tranducers
   
