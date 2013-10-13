@@ -29,6 +29,7 @@ then
   fsmcompile -i letras.syms -o letras.syms -t trad_orra.txt > "$ORRA"
 
   fsmunion "$ISCO" "$ORRA" > "$GLOBAL"
+  fsmdraw -i letras.syms -o letras.syms "$GLOBAL" | dot -Tpdf > "${GLOBAL%.*}.pdf"
   
   # Compose word transducers with suffix tranducers
   
